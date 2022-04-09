@@ -1,4 +1,4 @@
-package basepackage;
+package childPackageOne;
 
 import com.intuit.karate.junit5.Karate;
 
