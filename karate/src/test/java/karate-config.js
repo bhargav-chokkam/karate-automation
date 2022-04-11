@@ -8,9 +8,8 @@ function fn() {
     env: env,
     myVarName: 'someValue'
   }
-  if (env == 'dev') {
+  if (env == 'QA') {
     // customize
-    // e.g. config.foo = 'bar';
   } else if (env == 'e2e') {
     // customize
   }
