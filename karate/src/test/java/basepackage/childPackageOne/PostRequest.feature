@@ -3,25 +3,7 @@ Feature:
 
   Background: 
     Given url 'https://jobportalkarate.herokuapp.com'
-    * def requestBody =
-      """
-      {
-      "experience": [
-      "java"
-      ],
-      "jobDescription": "qa",
-      "jobId": 0,
-      "jobTitle": "ana",
-      "project": [
-      {
-      "projectName": "wu",
-      "technology": [
-        "sel"
-      ]
-      }
-      ]
-      }
-      """
+    * def requestBody = read('classpath:resourcesPackage/postRequest.json')
 
   Scenario: 
     Post Request Sanity

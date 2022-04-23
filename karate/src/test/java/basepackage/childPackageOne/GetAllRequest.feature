@@ -28,8 +28,8 @@ Feature:
           "project": '#[]##(projectSchema)'
       }
       """
-      * def finalSchema = 
+    * def finalSchema =
       """
       '#[] ##(mainSchema)'
       """
-      * match response == finalSchema
+    * match response == finalSchema
