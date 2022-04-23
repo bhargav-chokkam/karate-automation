@@ -7,17 +7,17 @@ Feature:
       """
       {
       "experience": [
-      "2"
+      "java"
       ],
-      "jobDescription": "QA",
-      "jobId": 1,
-      "jobTitle": "Ana",
+      "jobDescription": "qa",
+      "jobId": 0,
+      "jobTitle": "ana",
       "project": [
       {
-        "projectName": "WU",
-        "technology": [
-          "JAVA"
-        ]
+      "projectName": "wu",
+      "technology": [
+        "sel"
+      ]
       }
       ]
       }
@@ -31,21 +31,3 @@ Feature:
     When method post
     Then status 201
     * print response
-
-  Scenario: 
-    Get All Data
-
-    Given path 'normal/webapi/all'
-    When method get
-    Then status 200
-    * print response
-
-  Scenario: 
-    Get particular id data
-
-    Given path 'normal/webapi/find'
-    And param id =  '1'
-    And param jobTitle = 'Ana'
-    When method get
-    Then status 200
-    And print response

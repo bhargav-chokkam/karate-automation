@@ -20,8 +20,7 @@ public class ParallelBuilder {
 		Builder builderObj = new Builder();
 		builderObj.path("classpath:basepackage");
 //		builderObj.tags("@tagurl");
-		Results res = builderObj.parallel(5);
-		System.out.println(res.getReportDir());
+		builderObj.parallel(5);
 	}
 
 }
