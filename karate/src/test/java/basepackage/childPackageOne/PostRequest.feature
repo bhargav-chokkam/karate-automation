@@ -1,21 +1,51 @@
-@tagfa
 Feature: 
-  This Feature is used to create a record and this is can be called from another feature file.
+  Post Request Feature File
 
   Background: 
-    Given url 'https://jobportalkarate.herokuapp.com/'
-@tagsa
-  Scenario: 
-    This scenario will create a record
+    Given url 'https://jobportalkarate.herokuapp.com'
+    * def requestBody =
+      """
+      {
+      "experience": [
+      "2"
+      ],
+      "jobDescription": "QA",
+      "jobId": 1,
+      "jobTitle": "Ana",
+      "project": [
+      {
+        "projectName": "WU",
+        "technology": [
+          "JAVA"
+        ]
+      }
+      ]
+      }
+      """
 
-    Then print "First Scneario in PostRequest Feature File"
-@tagsb
   Scenario: 
-    This scenario will create a record
+    Post Request Sanity
 
-    Then print "Secound Scneario in PostRequest Feature File"
-@tagsa
+    Given path '/normal/webapi/add'
+    * request requestBody
+    When method post
+    Then status 201
+    * print response
+
   Scenario: 
-    This scenario will create a record
+    Get All Data
 
-    Then print "Third Scneario in PostRequest Feature File"
+    Given path 'normal/webapi/all'
+    When method get
+    Then status 200
+    * print response
+
+  Scenario: 
+    Get particular id data
+
+    Given path 'normal/webapi/find'
+    And param id =  '1'
+    And param jobTitle = 'Ana'
+    When method get
+    Then status 200
+    And print response

@@ -6,11 +6,12 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    _url: 'defaultUrl'
   }
   if (env == 'QA') {
     // customize
-  } else if (env == 'e2e') {
+    config._url = 'https://jobportalkarate.herokuapp.com';
+  } else if (env == 'Dev') {
     // customize
   }
   return config;

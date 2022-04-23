@@ -17,23 +17,11 @@ import net.masterthought.cucumber.ReportBuilder;
 public class ParallelBuilder {
 	@Test
 	public void executeCode() {
-		Builder<Builder> builderObj = new Builder();
+		Builder builderObj = new Builder();
 		builderObj.path("classpath:basepackage");
-		builderObj.tags("@tagfa");
+//		builderObj.tags("@tagurl");
 		Results res = builderObj.parallel(5);
 		System.out.println(res.getReportDir());
-//		getCucumberReport(res.getReportDir());
-	}
-
-	private void getCucumberReport(String directory) {
-		File reportDir = new File(directory);
-		Collection<File> jsonCollection = FileUtils.listFiles(reportDir, new String[] { "json" }, true);
-		List<String> jsonFile = new ArrayList<String>();
-		jsonCollection.forEach(file -> jsonFile.add(file.getAbsolutePath()));
-		Configuration config = new Configuration(reportDir, "Karate Run");
-		ReportBuilder reportObj = new ReportBuilder(jsonFile, config);
-		reportObj.generateReports();
-
 	}
 
 }

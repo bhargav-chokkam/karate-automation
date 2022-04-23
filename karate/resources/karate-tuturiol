@@ -1,0 +1,24 @@
+Fuzzey Matcher:
+
+#ignore: Skip comparison 
+#null: Value should be null
+#nulnull
+#present: key must be present even data is any of type or even null
+#notpresent: attribute should not be present
+#array: Works with only Json
+#object: Works with only Json
+#boolean 
+#number
+#string
+
+Examples:
+
+* match response.id == '#number'
+
+Advanced Fuzzy Matcher
+
+#? exp
+#[num]?exp
+Ex: 
+#string? _.lenght == 33
+#[3]string? _.lenght >=2 

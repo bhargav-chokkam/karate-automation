@@ -6,7 +6,7 @@ public class UsersRunner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("PostRequest").relativeTo(getClass());
+        return Karate.run("deleteById").relativeTo(getClass());
     }    
 
 }
